@@ -11,6 +11,7 @@ import java.util.Random;
 public class RandomWord {
 	int wordsLenght;
 	int index;
+	String className = this.getClass().getSimpleName();
 	Random random = new Random();
 	static List<String> words = new ArrayList<String>();
 	public void init() throws IOException {
@@ -27,12 +28,12 @@ public class RandomWord {
        	}		
 		}
 		else {
-            throw new RuntimeException("Failed to load words!");
+            throw new RuntimeException("[" + className.toUpperCase() + "] " + "Failed to load words!");
         }
 		
 	}
 	
-	public String GetRandomWord() {
+	public String getWord() {
 		wordsLenght = words.size();
 		index = random.nextInt(wordsLenght + 1);
 		
