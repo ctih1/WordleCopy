@@ -1,6 +1,9 @@
 package xyz.ctih1;
 
 import java.util.ArrayList;
+import java.util.Dictionary;
+import java.util.HashMap;
+import java.util.Hashtable;
 import java.util.List;
 import java.util.Scanner;
 
@@ -12,12 +15,14 @@ public class Guess{
 	List<String> guessChars = new ArrayList<String>();
 	List<String> guessedWords = new ArrayList<String>();
 	List<String> correctColors = new ArrayList<String>();
+	HashMap<String, Integer> letters = new HashMap<>();
 	String reset = "\\u001b[0m";
 	String correct = "O";
 	String wrongPos = "V";
 	String none = "X";
 	String className = this.getClass().getSimpleName();
 	static boolean forceActualWords = true;
+	static boolean showAnwser = false;
 	Boolean proceed;
 	
 	public void setWord(String word) {
@@ -44,6 +49,18 @@ public class Guess{
 			// Tee myöhemmin
 		}
 		else { 
+			
+			for(int i= 0; i < 5; i++) {
+				System.out.println(letters);
+				if(!(letters.containsKey(String.valueOf(correctWord.charAt(i))))) {
+					System.out.println("Registered "+ correctWord.charAt(i) );
+					letters.put(String.valueOf(correctWord.charAt(i)), 1);
+				}
+				else {
+					System.out.println(letters);
+					letters.put(String.valueOf(correctWord.charAt(i)), letters.get(String.valueOf(correctWord.charAt(i)))+1);
+				}
+			}
 			for(int i = 0; i < 5; i++) {
 				guessChars.add(String.valueOf(guess.charAt(i)));
 			}
@@ -54,7 +71,11 @@ public class Guess{
 				}
 				else if(correctChars.contains(guessChars.get(i))) {
 					if(!(correctChars.get(i).equals(guessChars.get(i)))) {
-						correctColors.add(wrongPos);
+						if(letters.get(correctChars.get(i)) > 0) {
+							correctColors.add(wrongPos);
+							letters.put(String.valueOf(correctChars.get(i)), letters.get(correctChars.get(i) + 10));
+						}
+						
 						}
 					}
 
@@ -69,12 +90,23 @@ public class Guess{
 			
 			if(guess.equals(correctWord)) {
 				System.out.println("[" + className.toUpperCase() + "] " + "Correct word!");
+				try {
+					Thread.sleep(2000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				System.exit(0);
 			}
 			
 			guessedWords.add(guess);
-			System.out.println("[" + className.toUpperCase() + "] " + correctWord);
+			if(showAnwser) {
+				System.out.println("[" + className.toUpperCase() + "] " + correctWord);
+			}
+			System.out.println("[" + className.toUpperCase() + "] " + guessChars);
 			System.out.println("[" + className.toUpperCase() + "] " + correctColors);
 			correctColors.clear();
+			letters.clear();
 			guess = "";
 			guessChars.clear();
 		}
