@@ -9,25 +9,22 @@ public class Guess {
     private static final ArrayList<String> score = new ArrayList<String>();
     private static final ArrayList<String> correctThing = new ArrayList<String>();
     private static final HashMap<String, Integer> letters = new HashMap<String, Integer>();
-    public static ArrayList<String> checkGuess(ArrayList guess, ArrayList correct) {
+    public static ArrayList<String> checkGuess(String guess, String correct) {
         letters.clear();
         score.clear();
         for(int i = 0; i<5; i++) {
-            if(!(letters.containsKey(String.valueOf(guess.get(i))))) {
-                letters.put((String) guess.get(i), 1);
-            }
-            else {
-                letters.put((String) guess.get(i), letters.get(String.valueOf(guess.get(i)))+1);
-            }
-            System.out.println(guess.get(i));
+            System.out.println(guess + " <|> " + correct);
+            System.out.println(letters);
+            letters.put(String.valueOf(guess.charAt(i)), 1 + letters.getOrDefault(letters.get(String.valueOf(guess.charAt(i))), 0));
+
             //System.out.println(correct.get(i));
-            if(guess.get(i).equals(correct.get(i))) {
+            if(String.valueOf(guess.charAt(i)).equalsIgnoreCase(String.valueOf(correct.charAt(i)))) {
                 score.add("1");
             }
-            else if(guess.contains(correct.get(i))) {
+            else if(guess.contains(String.valueOf(correct.charAt(i)))) {
 
-                if(letters.get(String.valueOf(guess.get(i))) > 0) {
-                     letters.put((String) guess.get(i), letters.get(String.valueOf(guess.get(i)))-1);
+                if(letters.get(String.valueOf(guess.charAt(i))) > 0) {
+                     letters.put(String.valueOf(guess.charAt(i)), letters.get(String.valueOf(guess.charAt(i)))-1);
                      score.add("2");
                 }
             }
@@ -36,15 +33,7 @@ public class Guess {
             }
 
         }
-        guess.clear();
+        guess = "";
         return score;
-    }
-
-    public static ArrayList splitWord(String text) {
-        correctThing.clear();
-        for(int i = 0; i <5; i++) {
-            correctThing.add(String.valueOf(text.charAt(i)));
-        }
-        return correctThing;
     }
 }

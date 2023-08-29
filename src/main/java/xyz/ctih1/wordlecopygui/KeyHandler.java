@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 
 public class KeyHandler {
-    private static ArrayList<String> words = new ArrayList<String>();
+    private static String words = "";
     private static ArrayList<String> returnList = new ArrayList<>();
     private static TextField field;
     static int row = 0;
@@ -19,6 +19,7 @@ public class KeyHandler {
 
     public static String randomWord = RandomWord.getWord();
     public static void assignLetter(String text) {
+        System.out.println(randomWord);
         if (pos > 4) {
             pos = 0;
 
@@ -43,12 +44,13 @@ public class KeyHandler {
      }
 
      public static void evaluate() {
+        words = "";
         for(int i = 0; i < 5; i++) {
             field = (TextField) root.lookup("#text" + String.valueOf(i) + String.valueOf(row));
-            words.add(field.getText());
+            words += field.getText();
         }
         returnList.clear();
-        returnList = Guess.checkGuess(words,Guess.splitWord(randomWord));
+        returnList = Guess.checkGuess(String.valueOf(words),randomWord);
         System.out.println(returnList);
         for(int i = 0; i <5; i++) {
             field = (TextField) root.lookup("#text" + String.valueOf(i) + String.valueOf(row));
