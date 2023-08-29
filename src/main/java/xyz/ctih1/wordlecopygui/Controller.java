@@ -19,15 +19,24 @@ public class Controller implements Initializable  {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         inputField.textProperty().addListener((observable, oldText, newText) -> {
             if(oldText.length() > newText.length()) {
-                KeyHandler.onCharDelete(newText.length());
+                    KeyHandler.onCharDelete(newText.length());
+
+
             }
-            KeyHandler.assignLetter(newText);
+            if(!newText.contains("\n")) {
+                KeyHandler.assignLetter(newText);
+            }
+            else {
+                inputField.setText(inputField.getText().substring(0, inputField.getText().length() - 1));
+            }
         });
     }
 
     @FXML
     public void onEnter(ActionEvent ae) {
-        inputField.clear();
+        KeyHandler.evaluate();
         KeyHandler.row++;
+        inputField.setText("");
+        KeyHandler.pos = 0;
     }
 }
