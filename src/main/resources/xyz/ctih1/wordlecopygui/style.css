@@ -1,0 +1,14 @@
+AnchorPane
+{
+    -fx-background-color:  #242323;
+}
+
+TextField
+{
+    -fx-background-color:  #2b2b2b;
+}
+VBox
+{
+    -fx-background-color: #171717;
+}
+

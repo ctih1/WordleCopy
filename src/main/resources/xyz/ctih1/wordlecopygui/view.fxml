@@ -1,29 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
-
-<VBox alignment="CENTER" prefHeight="580.0" prefWidth="457.0" spacing="20.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="xyz.ctih1.wordlecopygui.Controller">
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<VBox alignment="CENTER" prefHeight="541.0" prefWidth="465.0" spacing="20.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="xyz.ctih1.wordlecopygui.Controller">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
    <children>
       <AnchorPane prefHeight="520.0" prefWidth="417.0">
          <children>
-            <Text layoutX="107.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wordle Copy" textAlignment="CENTER" AnchorPane.leftAnchor="107.0" AnchorPane.rightAnchor="107.0" AnchorPane.topAnchor="14.0">
+            <Text fill="#8a8a8a" layoutX="7.0" layoutY="58.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Now works!" textAlignment="CENTER" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="35.0">
                <font>
-                  <Font size="35.0" />
+                  <Font name="Rubik-Bold" size="19.0" />
                </font>
             </Text>
-            <GridPane layoutX="29.0" layoutY="154.0" prefHeight="352.0" prefWidth="358.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="154.0">
+            <Text layoutX="-8.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wordle Copy" textAlignment="CENTER" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+               <font>
+                  <Font name="Rubik-Bold" size="35.0" />
+               </font>
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.490521327014218" focusDistance="0.02298850574712641" radius="0.9022988505747127">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.7894737124443054" green="0.7894737124443054" blue="0.7894737124443054" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </RadialGradient>
+               </fill>
+            </Text>
+            <GridPane hgap="1.0" layoutX="29.0" layoutY="154.0" prefHeight="352.0" prefWidth="358.0" vgap="1.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -39,109 +55,109 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <TextField fx:id="text00" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <TextField fx:id="text00" alignment="CENTER" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <font>
-                        <Font size="32.0" />
+                        <Font name="Microsoft Sans Serif" size="32.0" />
                      </font></TextField>
-                  <TextField fx:id="text10" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <TextField fx:id="text10" alignment="CENTER" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <font>
-                        <Font size="32.0" />
+                        <Font name="Microsoft Sans Serif" size="32.0" />
                      </font></TextField>
-                  <TextField fx:id="text20" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <TextField fx:id="text20" alignment="CENTER" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <font>
-                        <Font size="32.0" />
+                        <Font name="Microsoft Sans Serif" size="32.0" />
                      </font></TextField>
-                  <TextField fx:id="text30" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <TextField fx:id="text30" alignment="CENTER" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <font>
-                        <Font size="32.0" />
+                        <Font name="Microsoft Sans Serif" size="32.0" />
                      </font></TextField>
-                  <TextField fx:id="text40" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <TextField fx:id="text40" alignment="CENTER" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <font>
-                        <Font size="32.0" />
+                        <Font name="Microsoft Sans Serif" size="32.0" />
                      </font></TextField>
-                  <TextField fx:id="text01" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <TextField fx:id="text01" alignment="CENTER" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <font>
-                        <Font size="32.0" />
+                        <Font name="Microsoft Sans Serif" size="32.0" />
                      </font></TextField>
-                  <TextField fx:id="text11" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <TextField fx:id="text11" alignment="CENTER" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
-                        <Font size="32.0" />
+                        <Font name="Microsoft Sans Serif" size="32.0" />
                      </font></TextField>
-                  <TextField fx:id="text21" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <TextField fx:id="text21" alignment="CENTER" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <font>
-                        <Font size="32.0" />
+                        <Font name="Microsoft Sans Serif" size="32.0" />
                      </font></TextField>
-                  <TextField fx:id="text31" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                  <TextField fx:id="text31" alignment="CENTER" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
                      <font>
-                        <Font size="32.0" />
+                        <Font name="Microsoft Sans Serif" size="32.0" />
                      </font></TextField>
-                  <TextField fx:id="text41" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <TextField fx:id="text41" alignment="CENTER" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <font>
-                        <Font size="32.0" />
+                        <Font name="Microsoft Sans Serif" size="32.0" />
                      </font></TextField>
-                  <TextField fx:id="text02" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <TextField fx:id="text02" alignment="CENTER" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                      <font>
-                        <Font size="32.0" />
+                        <Font name="Microsoft Sans Serif" size="32.0" />
                      </font></TextField>
-                  <TextField fx:id="text12" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <TextField fx:id="text12" alignment="CENTER" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                      <font>
-                        <Font size="32.0" />
+                        <Font name="Microsoft Sans Serif" size="32.0" />
                      </font></TextField>
-                  <TextField fx:id="text22" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <TextField fx:id="text22" alignment="CENTER" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                      <font>
-                        <Font size="32.0" />
+                        <Font name="Microsoft Sans Serif" size="32.0" />
                      </font></TextField>
-                  <TextField fx:id="text32" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <TextField fx:id="text32" alignment="CENTER" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                      <font>
-                        <Font size="32.0" />
+                        <Font name="Microsoft Sans Serif" size="32.0" />
                      </font></TextField>
-                  <TextField fx:id="text42" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                  <TextField fx:id="text42" alignment="CENTER" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                      <font>
-                        <Font size="32.0" />
+                        <Font name="Microsoft Sans Serif" size="32.0" />
                      </font></TextField>
-                  <TextField fx:id="text03" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.rowIndex="3">
+                  <TextField fx:id="text03" alignment="CENTER" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.rowIndex="3">
                      <font>
-                        <Font size="32.0" />
+                        <Font name="Microsoft Sans Serif" size="32.0" />
                      </font></TextField>
-                  <TextField fx:id="text13" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <TextField fx:id="text13" alignment="CENTER" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <font>
-                        <Font size="32.0" />
+                        <Font name="Microsoft Sans Serif" size="32.0" />
                      </font></TextField>
-                  <TextField fx:id="text23" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                  <TextField fx:id="text23" alignment="CENTER" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
                      <font>
-                        <Font size="32.0" />
+                        <Font name="Microsoft Sans Serif" size="32.0" />
                      </font></TextField>
-                  <TextField fx:id="text33" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                  <TextField fx:id="text33" alignment="CENTER" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
                      <font>
-                        <Font size="32.0" />
+                        <Font name="Microsoft Sans Serif" size="32.0" />
                      </font></TextField>
-                  <TextField fx:id="text43" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                  <TextField fx:id="text43" alignment="CENTER" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                      <font>
-                        <Font size="32.0" />
+                        <Font name="Microsoft Sans Serif" size="32.0" />
                      </font></TextField>
-                  <TextField fx:id="text04" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.rowIndex="4">
+                  <TextField fx:id="text04" alignment="CENTER" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.rowIndex="4">
                      <font>
-                        <Font size="32.0" />
+                        <Font name="Microsoft Sans Serif" size="32.0" />
                      </font></TextField>
-                  <TextField fx:id="text14" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <TextField fx:id="text14" alignment="CENTER" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <font>
-                        <Font size="32.0" />
+                        <Font name="Microsoft Sans Serif" size="32.0" />
                      </font></TextField>
-                  <TextField fx:id="text24" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                  <TextField fx:id="text24" alignment="CENTER" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
                      <font>
-                        <Font size="32.0" />
+                        <Font name="Microsoft Sans Serif" size="32.0" />
                      </font></TextField>
-                  <TextField fx:id="text34" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                  <TextField fx:id="text34" alignment="CENTER" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
                      <font>
-                        <Font size="32.0" />
+                        <Font name="Microsoft Sans Serif" size="32.0" />
                      </font></TextField>
-                  <TextField fx:id="text44" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                  <TextField fx:id="text44" alignment="CENTER" disable="true" editable="false" prefHeight="68.0" prefWidth="71.0" GridPane.columnIndex="4" GridPane.rowIndex="4">
                      <font>
-                        <Font size="32.0" />
+                        <Font name="Microsoft Sans Serif" size="32.0" />
                      </font></TextField>
                </children>
             </GridPane>
-            <TextField fx:id="input" layoutX="94.0" layoutY="86.0" onAction="#onEnter" prefHeight="47.0" prefWidth="230.0" style="-fx-opacity: 0;">
+            <TextField fx:id="input" layoutX="11.0" layoutY="4.0" onAction="#onEnter" prefHeight="494.0" prefWidth="404.0" style="-fx-opacity: 0;">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>

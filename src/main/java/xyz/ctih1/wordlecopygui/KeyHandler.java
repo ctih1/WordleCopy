@@ -4,7 +4,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
 
 import java.util.ArrayList;
 
@@ -29,6 +28,7 @@ public class KeyHandler {
         System.out.println(field);
         if (text.length() > pos) {
             if(field!=null) {
+                field.setStyle("-fx-text-fill: white;");
                 field.setText(String.valueOf(text.charAt(pos)));
                 pos++;
             }

@@ -3,18 +3,26 @@ package xyz.ctih1.wordlecopygui;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable  {
 
+    private double yoff;
+    private double xoff;
+
     @FXML
     private TextField inputField;
 
+    @FXML
+    private Button min;
 
+    @FXML
+    private Pane bar;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         inputField.textProperty().addListener((observable, oldText, newText) -> {
@@ -32,6 +40,8 @@ public class Controller implements Initializable  {
         });
     }
 
+
+
     @FXML
     public void onEnter(ActionEvent ae) {
         KeyHandler.evaluate();
@@ -39,4 +49,6 @@ public class Controller implements Initializable  {
         inputField.setText("");
         KeyHandler.pos = 0;
     }
+
+
 }

@@ -12,28 +12,34 @@ public class Guess {
     public static ArrayList<String> checkGuess(String guess, String correct) {
         letters.clear();
         score.clear();
+
+        for(int i = 0; i < 5; i++) {
+            score.add(" ");
+        }
+
         for(int i = 0; i<5; i++) {
             System.out.println(guess + " <|> " + correct);
             System.out.println(letters);
-            letters.put(String.valueOf(guess.charAt(i)), 1 + letters.getOrDefault(letters.get(String.valueOf(guess.charAt(i))), 0));
+            letters.put(String.valueOf(guess.charAt(i)), 1 + letters.getOrDefault(String.valueOf(letters.get(guess.charAt(i))), 0));
 
             //System.out.println(correct.get(i));
-            if(String.valueOf(guess.charAt(i)).equalsIgnoreCase(String.valueOf(correct.charAt(i)))) {
-                score.add("1");
-            }
-            else if(guess.contains(String.valueOf(correct.charAt(i)))) {
+            boolean b = String.valueOf(guess.charAt(i)).equalsIgnoreCase(String.valueOf(correct.charAt(i)));
 
-                if(letters.get(String.valueOf(guess.charAt(i))) > 0) {
-                     letters.put(String.valueOf(guess.charAt(i)), letters.get(String.valueOf(guess.charAt(i)))-1);
-                     score.add("2");
-                }
+            boolean contains = correct.contains(String.valueOf(guess.charAt(i)));
+            if(!(contains) && !(b)) {
+                score.set(i,"0");
             }
-            else {
-                score.add("0");
+            else if(b) {
+                score.set(i,"1");
+                letters.put(String.valueOf(guess.charAt(i)), letters.get(String.valueOf(guess.charAt(i)))-1);
             }
+            else if(contains && !b && letters.get(String.valueOf(guess.charAt(i))) > 0)  {
+                score.set(i,"2");
+                letters.put(String.valueOf(guess.charAt(i)), letters.get(String.valueOf(guess.charAt(i)))-1);
+            }
+
 
         }
-        guess = "";
         return score;
     }
 }
